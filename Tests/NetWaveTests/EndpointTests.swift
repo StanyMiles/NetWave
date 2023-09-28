@@ -1,7 +1,7 @@
 import XCTest
 import NetWave
 
-final class NetWaveTests: XCTestCase {
+final class EndpointTests: XCTestCase {
   func test() {
     XCTFail("add more tests")
   }
