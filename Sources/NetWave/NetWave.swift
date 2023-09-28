@@ -7,7 +7,7 @@ public enum NetWaveError: Error {
 
 public protocol HTTPHandling {
   func loadData<Kind: EndpointKind, Response: Decodable>(
-    from endpoint: Endpoint<Kind, Response>,
+    for endpoint: Endpoint<Kind, Response>,
     host: URLHost
   ) async throws -> Response
 }
@@ -25,7 +25,7 @@ public struct NetWave: HTTPHandling {
   }
   
   public func loadData<Kind: EndpointKind, Response: Decodable>(
-    from endpoint: Endpoint<Kind, Response>,
+    for endpoint: Endpoint<Kind, Response>,
     host: URLHost
   ) async throws -> Response {
     guard let request = endpoint.makeRequest(host: host) else {
