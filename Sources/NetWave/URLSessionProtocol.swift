@@ -3,14 +3,14 @@ import Foundation
 public protocol URLSessionProtocol {
   func data(
     for request: URLRequest,
-    delegate: (URLSessionTaskDelegate)?
+    delegate: URLSessionTaskDelegate?
   ) async throws -> (Data, URLResponse)
 }
 
 extension URLSessionProtocol {
   public func data(
     for request: URLRequest,
-    delegate: (URLSessionTaskDelegate)? = nil
+    delegate: URLSessionTaskDelegate? = nil
   ) async throws -> (Data, URLResponse) {
     try await data(for: request, delegate: delegate)
   }
